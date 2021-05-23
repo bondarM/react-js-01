@@ -1,38 +1,321 @@
-.App {
-  text-align: center;
+body{
+  background-color: #eaeaea;
+}
+div, p {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapp{
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+}
+
+.drop__block{
+  cursor: pointer;
+  width: 47px;
+  height: 47px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+background-color: white;
+border: 1px solid rgba(0, 0, 0, 0.048);
+}
+
+.arrow__drop{
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid rgb(165, 165, 165);
+}
+
+.inp__color{
+  height: 47px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.048);
+  padding-left: 15px;
+  border-right: none;
+}
+
+.inp__color:focus{
+  outline: none;
+}
+.color{
+  width: 25px;
+  height:25px;
+  border-radius: 0;
+  background-color: #ffed00;
+}
+
+
+.menu__color, .rgb__menu{
+  background-color: white;
+  width: 150px;
+  height:100%;
+  margin-top:15px;
+  position: relative;
+  -webkit-box-shadow:1px 22px 23px 3px rgb(0 0 0 / 15%);
+  -moz-box-shadow: 1px 22px 23px 3px rgb(0 0 0 / 15%);
+  box-shadow: 1px 22px 23px 3px rgb(0 0 0 / 15%);
+}
+
+.menu__color::after{
+  content: "";
+  position: absolute;
+  right: 12px;
+  z-index: -1;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid rgb(255 255 255);
+
+}
+
+
+.block__edit__nav{
+display: flex;
+}
+
+.wrapp__center{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 100px;
+
+}
+
+.menu__color > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+  cursor: pointer;
+}
+
+.menu__color > div:hover{
+  background-color: rgba(86, 156, 221, 0.911);
+  color: white;
+
+}
+
+
+.menu__color > div:last-child{
+  border: none;
+}
+
+.menu__color{
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.548);
+}
+
+.clr__ex{
+  width: 15px;
+  height: 15px;
+  background-color: yellow;
+}
+
+
+.red{
+  background-color: #9e2626;
+}
+
+.blue{
+  background-color: rgb(65, 89, 170);
+}
+
+.green{
+  background-color: rgb(71, 196, 109);
+}
+
+
+.square__color {
+  /* padding: 10px; */
+  width: 48px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.048);
+  background-color: white;
+  border-right: none;
+  cursor: pointer;
+}
+
+
+
+.rgb__menu{
+  padding: 10px 20px;
+  width:217px;
+  display: none;
+}
+
+.rgb__menu::after{
+  content: "";
+  position: absolute;
+  right: 62px;
+  z-index: -1;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid rgb(255 255 255);
+
+}
+
+.open{
+  display: block;
+}
+
+
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  /* background: #3071A9; */
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  width: 192px;
+  padding: 4px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: linear-gradient(to left, rgb(255, 0, 0), rgb(0, 0, 0));  border-radius: 5px;
+  border:none;
+}
+
+input#r::-webkit-slider-runnable-track {
+  background: linear-gradient(to left, rgb(255, 0, 0), rgb(0, 0, 0));  border-radius: 5px;
+}
+
+input#g::-webkit-slider-runnable-track {
+  background: linear-gradient(to left, rgb(0, 255, 0), rgb(0, 0, 0));  border-radius: 5px;
+}
+
+input#b::-webkit-slider-runnable-track {
+  background: linear-gradient(to left, rgb(0, 4, 255), rgb(0, 0, 0));  border-radius: 5px;
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 25px;
+  background: #8b8b8b;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+
+.l_b {
+  padding-right: 3px;
+}
+
+/* input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #3071A9;
+} */
+/* input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071A9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+} */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height:5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+
+.btn{
+  border: 1px solid rgb(212, 212, 212);
+padding: 5px 10px;
+margin-left: 5px;
+font-size: 14px;
+background: rgb(194, 194, 194);
+cursor: pointer;
+}
+
+.btn__block{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.btn__ok{
+  background: rgb(33, 177, 33);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.closed{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
