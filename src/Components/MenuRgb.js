@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 export default function MenuRgb(props) {
+
+
     return (
-        <div className="rgb__menu">
+        <div className={`rgb__menu ${props.classRgb}`}>
                     <div>
                         <label htmlFor="r">R</label>
                         <input type="range" min="0" max="255" id="r" step="1" defaultValue="255" />

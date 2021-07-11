@@ -7,7 +7,7 @@ export default function ColorPicker() {
     const [menuColor, setMenuColor] = useState(false)
     const [menuRgb, setMenuRgb] = useState(false)
     const [beforeColor, setBeforeColor] = useState("")
-
+    const [rgbMenu, setRgbClass] = useState("")
     const inputCol = useRef(null)
 
     let colorSquare
@@ -90,8 +90,7 @@ export default function ColorPicker() {
     function rgbOpen() {
         setMenuRgb(!menuRgb)
         setMenuColor(false)
-        let rgbmenu = document.querySelector(".rgb__menu")
-        menuRgb ? rgbmenu.classList.remove("open") : rgbmenu.classList.add("open")
+        menuRgb ? setRgbClass("") : setRgbClass("open")
 
         setBeforeColor(getComputedStyle(document.querySelector(".color")).backgroundColor)
     }
@@ -99,21 +98,21 @@ export default function ColorPicker() {
     function colorOpen() {
         setMenuColor(!menuColor)
         setMenuRgb(false)
-        document.querySelector(".rgb__menu").classList.remove("open")
+        setRgbClass("")
     }
 
     //////////////////////// closeButton
     function cancelColor() {
         setMenuRgb(false)
         document.querySelector(".color").style.backgroundColor = beforeColor
-        document.querySelector(".rgb__menu").classList.remove("open")
+        setRgbClass("")
         setRangeColor(hexToRgb(`${rgb2hex(beforeColor)}`))
         inputCol.current.value = `${rgb2hex(beforeColor)}`
     }
 
     function applyColor() {
         setMenuRgb(false)
-        document.querySelector(".rgb__menu").classList.remove("open")
+         setRgbClass("")
     }
 
 
@@ -143,7 +142,7 @@ export default function ColorPicker() {
 
                 {menuColor ? <MenuColors selectColor={selectColor} /> : ""}
 
-                <MenuRgb applyColor={applyColor} cancelColor={cancelColor} />
+                <MenuRgb applyColor={applyColor} classRgb={rgbMenu} cancelColor={cancelColor} />
 
             </div>
         </div>
