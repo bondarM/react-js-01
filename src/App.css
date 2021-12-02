@@ -20,8 +20,8 @@ div, p {
   display: flex;
   justify-content: center;
   align-items: center;
-background-color: white;
-border: 1px solid rgba(0, 0, 0, 0.048);
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.048);
 }
 
 .arrow__drop{
@@ -51,7 +51,6 @@ border: 1px solid rgba(0, 0, 0, 0.048);
   background-color: #ffed00;
 }
 
-
 .menu__color, .rgb__menu{
   background-color: white;
   width: 150px;
@@ -76,7 +75,6 @@ border: 1px solid rgba(0, 0, 0, 0.048);
   border-bottom: 12px solid rgb(255 255 255);
 
 }
-
 
 .block__edit__nav{
 display: flex;
@@ -105,25 +103,22 @@ display: flex;
 
 }
 
-
 .menu__color > div:last-child{
   border: none;
 }
 
 .menu__color{
-  text-transform: uppercase;
   color: rgba(0, 0, 0, 0.548);
 }
 
 .clr__ex{
   width: 15px;
   height: 15px;
-  background-color: yellow;
+  background-color: rgb(255 248 44);
 }
 
-
 .red{
-  background-color: #9e2626;
+  background-color: rgb(231 20 20);
 }
 
 .blue{
@@ -134,9 +129,7 @@ display: flex;
   background-color: rgb(71, 196, 109);
 }
 
-
 .square__color {
-  /* padding: 10px; */
   width: 48px;
   align-items: center;
   justify-content: center;
@@ -146,8 +139,6 @@ display: flex;
   border-right: none;
   cursor: pointer;
 }
-
-
 
 .rgb__menu{
   padding: 10px 20px;
@@ -173,9 +164,6 @@ display: flex;
   display: block;
 }
 
-
-
-
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 8.4px;
@@ -200,6 +188,7 @@ input[type=range] {
   -webkit-appearance: none;
   width: 192px;
   padding: 4px 0;
+  cursor: pointer;
 }
 input[type=range]:focus {
   outline: none;
@@ -243,19 +232,6 @@ input[type=range]::-webkit-slider-thumb {
   padding-right: 3px;
 }
 
-/* input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #3071A9;
-} */
-/* input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 10px;
-  cursor: pointer;
-  animate: 0.2s;
-  box-shadow: 1px 1px 1px #000000;
-  background: #3071A9;
-  border-radius: 5px;
-  border: 1px solid #000000;
-} */
 input[type=range]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000;
   border: 1px solid #000000;
@@ -306,9 +282,6 @@ cursor: pointer;
   background: rgb(33, 177, 33);
   color: white;
 }
-
-
-
 
 .closed{
   width: 100%;

@@ -4,19 +4,19 @@ export default function Colors(props) {
     return (
         <div onClick={props.selectColor} className="menu__color">
                         <div>
-                            red
+                            Red
                             <div className="clr__ex red"></div>
                         </div>
                         <div>
-                            yellow
+                            Yellow
                             <div className="clr__ex"></div>
                         </div>
                         <div>
-                            green
+                            Green
                             <div className="clr__ex green"></div>
                         </div>
                         <div>
-                            blue
+                            Blue
                             <div className="clr__ex blue"></div>
                         </div>
                     </div>
